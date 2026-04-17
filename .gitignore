@@ -1,39 +1,93 @@
+# =============================================================================
+# Yocto Project - .gitignore
+# =============================================================================
+
+# -------------------------------------------------------
+# Yocto Build Output (NEVER commit these - can be 100GB+)
+# -------------------------------------------------------
+build/tmp/
+build/sstate-cache/
+build/cache/
+build/downloads/
+
+# Build artifacts
+*.ext4
+*.wic
+*.wic.gz
+*.wic.bz2
+*.wic.xz
+*.wic.zst
+*.wic.qcow2
+*.tar.bz2
+*.tar.gz
+*.tar.xz
+*.tar.zst
+*.rootfs.*
+*.spdx.json
+*.testdata.json
+*.manifest
+*.qemuboot.conf
+
+# Kernel build artifacts
+*.ko
+*.o
+*.cmd
+*.mod
+*.mod.c
+modules.order
+modules.builtin
+
+# BitBake cache and lock files
+build/bitbake.lock
+build/hashserve.sock
+build/cache/
+build/.bitbake.lock
+
+# -------------------------------------------------------
+# Keep These Build Config Files (important to commit)
+# -------------------------------------------------------
+# DO commit:
+#   build/conf/local.conf
+#   build/conf/bblayers.conf
+# They are explicitly NOT ignored below
+
+# -------------------------------------------------------
+# Downloaded Sources (can be re-downloaded)
+# -------------------------------------------------------
+build/downloads/
+!build/downloads/uninative/
+
+# -------------------------------------------------------
+# Log Files
+# -------------------------------------------------------
+build/tmp/log/
+*.log
+*.log.*
+
+# -------------------------------------------------------
+# Editor and OS Files
+# -------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# -------------------------------------------------------
+# Python
+# -------------------------------------------------------
+__pycache__/
 *.pyc
 *.pyo
-/*.patch
-/.repo/
-/build*/
-pyshtables.py
-pstage/
-scripts/oe-git-proxy-socks
-sources/
-meta-*/
-buildtools/
-!meta-skeleton
-!meta-selftest
-hob-image-*.bb
-*.swp
-*.orig
-*.rej
-*~
-!meta-poky
-!meta-yocto
-!meta-yocto-bsp
-!meta-yocto-imported
-/documentation/*/eclipse/
-/documentation/*/*.html
-/documentation/*/*.pdf
-/documentation/*/*.tgz
-/bitbake/doc/bitbake-user-manual/bitbake-user-manual.html
-/bitbake/doc/bitbake-user-manual/bitbake-user-manual.pdf
-/bitbake/doc/bitbake-user-manual/bitbake-user-manual.tgz
-pull-*/
-bitbake/lib/toaster/contrib/tts/backlog.txt
-bitbake/lib/toaster/contrib/tts/log/*
-bitbake/lib/toaster/contrib/tts/.cache/*
-bitbake/lib/bb/tests/runqueue-tests/bitbake-cookerdaemon.log
-_toaster_clones/
-downloads/
-sstate-cache/
-toaster.sqlite
-.vscode/
+*.pyd
+.Python
+*.egg-info/
+
+# -------------------------------------------------------
+# Temporary Files
+# -------------------------------------------------------
+*.tmp
+*.temp
+/tmp/

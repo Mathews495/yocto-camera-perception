@@ -1,0 +1,4 @@
+define KFEATURE_DESCRIPTION "Enable V4L2 camera support with vivid"
+define KFEATURE_COMPATIBILITY all
+
+kconf hardware camera-v4l2.cfg
